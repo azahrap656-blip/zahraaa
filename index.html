@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- =========================
+       BASIC SEO
+  ========================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio personal Az Zahra Putri Labita — Pelajar, creative, ambitious, dan terus berkembang melalui pendidikan, desain, fotografi, dan teknologi." />
+  <meta name="keywords" content="Az Zahra Putri Labita, portfolio, pelajar, student portfolio, desain, fotografi, web, Jakarta" />
+  <meta name="author" content="Az Zahra Putri Labita" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical placeholder -->
+  <!-- Ganti URL berikut dengan URL website kamu setelah deploy -->
+  <link rel="canonical" href="https://your-domain.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Az Zahra Putri Labita — Personal Portfolio" />
+  <meta property="og:description" content="Personal portfolio Az Zahra Putri Labita — Student • Creative • Ambitious." />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Az Zahra Putri Labita — Personal Portfolio" />
+  <meta name="twitter:description" content="Student • Creative • Ambitious." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200" />
+
+  <title>Az Zahra Putri Labita — Personal Portfolio</title>
+
+  <!-- =========================
+       GOOGLE FONTS
+  ========================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- =========================
+       TAILWIND CSS CDN
+  ========================== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F8F1EA",
+            softpink: "#F3D8DF",
+            pink: "#D989A0",
+            darkpink: "#B9637C",
+            ink: "#292526",
+            muted: "#756D6D"
+          },
+          fontFamily: {
+            sans: ["DM Sans", "sans-serif"],
+            display: ["Playfair Display", "serif"]
+          },
+          boxShadow: {
+            soft: "0 12px 40px rgba(70, 40, 45, 0.07)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- =========================
+       CUSTOM CSS
+  ========================== -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #fffdfb;
+      color: #292526;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #f3d8df;
+      color: #292526;
+    }
+
+    .font-display {
+      font-family: "Playfair Display", serif;
+    }
+
+    .nav-scrolled {
+      background: rgba(255, 253, 251, 0.94) !important;
+      box-shadow: 0 8px 30px rgba(50, 30, 35, 0.07);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-orb {
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .hero-orb-delay {
+      animation: float 9s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate3d(0, 0, 0);
+      }
+      50% {
+        transform: translate3d(0, -14px, 0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 {
+      transition-delay: 100ms;
+    }
+
+    .delay-200 {
+      transition-delay: 200ms;
+    }
+
+    .delay-300 {
+      transition-delay: 300ms;
+    }
+
+    .project-card,
+    .article-card,
+    .social-card,
+    .timeline-card {
+      transition:
+        transform 300ms ease,
+        box-shadow 300ms ease,
+        border-color 300ms ease;
+    }
+
+    .project-card:hover,
+    .article-card:hover,
+    .social-card:hover,
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(70, 40, 45, 0.09);
+    }
+
+    .image-hover img {
+      transition: transform 500ms ease;
+    }
+
+    .image-hover:hover img {
+      transform: scale(1.045);
+    }
+
+    .project-overlay {
+      opacity: 0;
+      transition: opacity 300ms ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        max-height 350ms ease,
+        opacity 250ms ease;
+    }
+
+    .mobile-menu.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+
+    .hamburger-line {
+      transition: transform 250ms ease, opacity 250ms ease;
+    }
+
+    .hamburger.active .line-one {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.active .line-two {
+      opacity: 0;
+    }
+
+    .hamburger.active .line-three {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .filter-btn {
+      transition: all 250ms ease;
+    }
+
+    .filter-btn.active {
+      background: #d989a0;
+      color: white;
+      border-color: #d989a0;
+    }
+
+    .timeline-line {
+      background: linear-gradient(
+        to bottom,
+        #d989a0,
+        rgba(217, 137, 160, 0.15)
+      );
+    }
+
+    .timeline-dot {
+      box-shadow: 0 0 0 6px rgba(217, 137, 160, 0.12);
+    }
+
+    .quote-mark {
+      font-family: Georgia, serif;
+      line-height: 0.7;
+    }
+
+    .lightbox {
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+    }
+
+    .lightbox.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+    }
+
+    .modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .testimonial {
+      display: none;
+      animation: testimonialIn 450ms ease;
+    }
+
+    .testimonial.active {
+      display: block;
+    }
+
+    @keyframes testimonialIn {
+      from {
+        opacity: 0;
+        transform: translateX(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .back-top {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: all 250ms ease;
+    }
+
+    .back-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .input-error {
+      border-color: #d989a0 !important;
+      box-shadow: 0 0 0 3px rgba(217, 137, 160, 0.1);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- =========================
+       STRUCTURED DATA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Az Zahra Putri Labita",
+    "jobTitle": "Pelajar",
+    "url": "https://your-domain.com/",
+    "description": "Pelajar yang aktif, kreatif, ambisius, dan tangguh.",
+    "sameAs": [
+      "https://instagram.com/__.autumn4",
+      "https://TikTok.com/martinedwards",
+      "https://Youtube.com/zzzkmmy27"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+  <header
+    id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300"
+  >
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <nav class="h-[74px] flex items-center justify-between">
+
+        <!-- Logo -->
+        <a
+          href="#beranda"
+          class="flex items-center gap-3 group"
+          aria-label="Kembali ke Beranda"
+        >
+          <span
+            class="w-9 h-9 rounded-full bg-pink text-white flex items-center justify-center font-display text-lg"
+          >
+            A
+          </span>
+
+          <span class="hidden sm:block">
+            <span class="block font-semibold text-sm">Az Zahra</span>
+            <span class="block text-[10px] tracking-[0.22em] uppercase text-muted">
+              Portfolio
+            </span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-7">
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#beranda">Beranda</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#tentang">Tentang</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#cv">CV</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#karya">Karya</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#foto">Foto</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#artikel">Artikel</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#sosial">Sosial</a>
+          <a class="nav-link text-sm text-muted hover:text-darkpink transition" href="#testimoni">Testimoni</a>
+          <a
+            href="#kontak"
+            class="px-4 py-2.5 rounded-full bg-ink text-white text-sm hover:bg-darkpink transition duration-300"
+          >
+            Kontak
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="hamburger"
+          class="hamburger lg:hidden w-11 h-11 rounded-full border border-black/10 flex flex-col justify-center items-center gap-[5px]"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line line-one block w-5 h-[1.5px] bg-ink"></span>
+          <span class="hamburger-line line-two block w-5 h-[1.5px] bg-ink"></span>
+          <span class="hamburger-line line-three block w-5 h-[1.5px] bg-ink"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu lg:hidden">
+        <div class="pb-5 pt-2 flex flex-col border-t border-black/5">
+          <a class="mobile-link py-3 text-sm" href="#beranda">Beranda</a>
+          <a class="mobile-link py-3 text-sm" href="#tentang">Tentang Saya</a>
+          <a class="mobile-link py-3 text-sm" href="#cv">CV</a>
+          <a class="mobile-link py-3 text-sm" href="#karya">Hasil Karya</a>
+          <a class="mobile-link py-3 text-sm" href="#foto">Foto</a>
+          <a class="mobile-link py-3 text-sm" href="#artikel">Artikel</a>
+          <a class="mobile-link py-3 text-sm" href="#sosial">Media Sosial</a>
+          <a class="mobile-link py-3 text-sm" href="#testimoni">Testimoni</a>
+          <a class="mobile-link py-3 text-sm" href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section
+      id="beranda"
+      class="relative min-h-screen flex items-center overflow-hidden pt-24"
+    >
+
+      <!-- Decorative Background -->
+      <div
+        class="hero-orb absolute top-28 right-[5%] w-40 h-40 rounded-full bg-softpink/40 blur-[2px] -z-10"
+      ></div>
+
+      <div
+        class="hero-orb-delay absolute bottom-20 left-[4%] w-24 h-24 rounded-full bg-cream -z-10"
+      ></div>
+
+      <div
+        class="absolute top-[20%] left-[45%] w-3 h-3 rounded-full bg-pink/40"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full">
+        <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-12 lg:gap-16 items-center">
+
+          <!-- Hero Text -->
+          <div class="reveal">
+
+            <div
+              class="inline-flex items-center gap-2 rounded-full border border-pink/25 bg-white/70 px-4 py-2 mb-7"
+            >
+              <span class="w-2 h-2 rounded-full bg-pink"></span>
+              <span class="text-xs uppercase tracking-[0.16em] text-muted">
+                Student • Creative • Ambitious
+              </span>
+            </div>
+
+            <p class="uppercase tracking-[0.25em] text-xs text-darkpink font-semibold mb-4">
+              Personal Portfolio
+            </p>
+
+            <h1
+              class="font-display text-[3.4rem] sm:text-6xl lg:text-[5.5rem] leading-[0.98] tracking-tight"
+            >
+              Az Zahra
+              <span class="italic text-darkpink">Putri</span>
+              Labita
+            </h1>
+
+            <div class="flex items-center gap-4 mt-7">
+              <span class="h-px w-12 bg-pink"></span>
+              <span class="font-display italic text-xl sm:text-2xl text-muted">
+                Pelajar
+              </span>
+            </div>
+
+            <p class="mt-7 max-w-xl text-muted leading-8 text-base sm:text-lg">
+              Seorang pelajar yang aktif, ambisius, dan terus ingin berkembang.
+              Aku percaya bahwa setiap proses kecil dapat menjadi langkah menuju
+              sesuatu yang lebih besar.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-9">
+
+              <a
+                href="#karya"
+                class="group inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-pink text-white font-medium text-sm hover:bg-darkpink hover:-translate-y-1 transition-all duration-300 shadow-soft"
+              >
+                Lihat Karya
+                <span class="group-hover:translate-x-1 transition-transform">↗</span>
+              </a>
+
+              <a
+                href="#kontak"
+                class="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full border border-ink/15 bg-white text-ink font-medium text-sm hover:border-pink hover:text-darkpink hover:-translate-y-1 transition-all duration-300"
+              >
+                Hubungi Saya
+              </a>
+
+            </div>
+
+            <div class="flex items-center gap-5 mt-10 text-xs text-muted">
+              <span>Jakarta</span>
+              <span class="w-1 h-1 rounded-full bg-pink"></span>
+              <span>Creative Learner</span>
+              <span class="w-1 h-1 rounded-full bg-pink"></span>
+              <span>2026</span>
+            </div>
+
+          </div>
+
+          <!-- Hero Image -->
+          <div class="reveal delay-200 relative flex justify-center lg:justify-end">
+
+            <div class="relative w-[min(82vw,470px)]">
+
+              <!-- Decorative frame -->
+              <div
+                class="absolute -inset-4 rounded-[45%_45%_42%_42%] border border-pink/25 rotate-3"
+              ></div>
+
+              <div
+                class="absolute -inset-8 rounded-[45%_45%_42%_42%] border border-cream -rotate-6"
+              ></div>
+
+              <div
+                class="relative aspect-[4/5] rounded-[42%_42%_12%_12%] overflow-hidden bg-cream shadow-soft image-hover"
+              >
+
+                <!--
+                  GANTI FOTO HERO DI SINI
+                  dengan foto kamu sendiri.
+                -->
+                <img
+                  src="https://drive.google.com/file/d/1lzR0yVyiO9ZQSFPDnBxLa9HOuw9Z4tjS/view?usp=drivesdk"
+                  alt="Foto profil Az Zahra Putri Labita"
+                  class="w-full h-full object-cover"
+                />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+              </div>
+
+              <!-- Floating badge -->
+              <div
+                class="absolute -bottom-5 -left-3 sm:-left-8 bg-white/90 backdrop-blur-md border border-white rounded-2xl px-5 py-4 shadow-soft"
+              >
+                <p class="text-[10px] uppercase tracking-[0.18em] text-muted">
+                  Currently
+                </p>
+                <p class="font-semibold text-sm mt-1">
+                  Learning & Creating
+                </p>
+              </div>
+
+              <div
+                class="absolute -top-5 -right-2 sm:-right-7 w-16 h-16 rounded-full bg-pink text-white flex items-center justify-center rotate-12 shadow-soft"
+              >
+                <span class="font-display italic text-xl">Az</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hidden sm:flex justify-center mt-16 pb-8">
+          <a
+            href="#tentang"
+            class="flex flex-col items-center gap-2 text-muted text-[10px] uppercase tracking-[0.2em]"
+          >
+            <span>Scroll to explore</span>
+            <span class="w-px h-10 bg-pink/50"></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+    <section id="tentang" class="py-24 sm:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-14 lg:gap-24 items-center">
+
+          <!-- About Image -->
+          <div class="reveal">
+            <div class="relative max-w-md mx-auto lg:mx-0">
+
+              <div class="absolute -bottom-5 -right-5 w-full h-full rounded-[28px] bg-cream"></div>
+
+              <!-- GANTI FOTO ABOUT DI SINI -->
+              <img
+                src="https://drive.google.com/file/d/1u3t9sNhvh6LgYuhWCxgIH-BE6OjxUSwn/view?usp=drivesdk"
+                alt="Saya Orang Yang Ceria"
+                loading="lazy"
+                class="relative w-full aspect-[4/5] object-cover rounded-[28px] shadow-soft"
+              />
+
+              <div
+                class="absolute -top-5 -left-5 bg-white rounded-2xl px-5 py-4 shadow-soft border border-black/5"
+              >
+                <span class="block text-2xl font-display text-darkpink">01</span>
+                <span class="text-[10px] uppercase tracking-[0.16em] text-muted">
+                  About Me
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- About Content -->
+          <div class="reveal delay-100">
+
+            <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+              About Me
+            </p>
+
+            <h2 class="font-display text-4xl sm:text-5xl leading-tight">
+              Belajar, mencoba,
+              <span class="italic text-darkpink">dan terus tumbuh.</span>
+            </h2>
+
+            <p class="text-muted leading-8 mt-7 max-w-2xl">
+              Aku adalah seorang pelajar yang punya rasa ingin tahu besar dan
+              senang mencoba berbagai hal baru. Bagiku, pendidikan bukan hanya
+              tentang nilai, tetapi juga tentang bagaimana aku belajar menjadi
+              pribadi yang lebih berani, kreatif, dan bertanggung jawab.
+            </p>
+
+            <p class="text-muted leading-8 mt-4 max-w-2xl">
+              Aku termasuk orang yang mudah bergaul dan senang bekerja bersama
+              orang lain. Setiap pengalaman, sekecil apa pun, selalu aku jadikan
+              kesempatan untuk belajar dan berkembang menjadi versi diriku yang
+              lebih baik.
+            </p>
+
+            <!-- Highlights -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-9">
+              <div class="px-4 py-3 rounded-2xl bg-cream text-center">
+                <span class="text-sm font-medium">Ambitious</span>
+              </div>
+              <div class="px-4 py-3 rounded-2xl bg-softpink/40 text-center">
+                <span class="text-sm font-medium">Creative</span>
+              </div>
+              <div class="px-4 py-3 rounded-2xl bg-cream text-center">
+                <span class="text-sm font-medium">Resilient</span>
+              </div>
+              <div class="px-4 py-3 rounded-2xl bg-softpink/40 text-center">
+                <span class="text-sm font-medium">Curious</span>
+              </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="mt-10">
+              <p class="text-xs uppercase tracking-[0.18em] text-muted mb-4">
+                Main Skills
+              </p>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="px-4 py-2 rounded-full border border-black/10 text-sm">Web Design</span>
+                <span class="px-4 py-2 rounded-full border border-black/10 text-sm">Photography</span>
+                <span class="px-4 py-2 rounded-full border border-black/10 text-sm">Creative Content</span>
+                <span class="px-4 py-2 rounded-full border border-black/10 text-sm">Communication</span>
+                <span class="px-4 py-2 rounded-full border border-black/10 text-sm">Teamwork</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         PERSONAL PHILOSOPHY
+    ====================================================== -->
+    <section id="filosofi" class="py-24 sm:py-32 bg-cream relative overflow-hidden">
+
+      <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full border border-pink/20"></div>
+      <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-softpink/20"></div>
+
+      <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center relative">
+
+        <div class="reveal">
+
+          <p class="uppercase tracking-[0.25em] text-xs font-semibold text-darkpink mb-8">
+            My Philosophy
+          </p>
+
+          <div class="quote-mark text-[90px] sm:text-[130px] text-pink/30">
+            “
+          </div>
+
+          <blockquote class="font-display text-3xl sm:text-5xl lg:text-6xl leading-[1.25]">
+            Jangan takut memulai dari kecil.
+            Setiap karya besar berawal dari
+            <span class="italic text-darkpink">keberanian</span> untuk mencoba.
+            Mari tumbuh bersama melalui
+            <span class="italic text-darkpink">kerja keras</span>,
+            <span class="italic text-darkpink">integritas</span>,
+            dan semangat
+            <span class="italic text-darkpink">pantang menyerah.</span>
+          </blockquote>
+
+          <div class="mt-10">
+            <span class="inline-block h-px w-10 bg-pink mb-2"></span>
+            <p class="font-display italic text-lg text-muted">
+              — Az Zahra Putri Labita
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CV / EDUCATION
+    ====================================================== -->
+    <section id="cv" class="py-24 sm:py-32 bg-white">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+
+        <div class="text-center reveal">
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+            My Journey
+          </p>
+
+          <h2 class="font-display text-4xl sm:text-5xl">
+            Pendidikan & Perjalanan
+          </h2>
+
+          <p class="text-muted max-w-xl mx-auto mt-5 leading-7">
+            Setiap tahap pendidikan menjadi bagian dari proses untuk membentuk
+            karakter, kemampuan, dan cara pandangku.
+          </p>
+        </div>
+
+        <div class="relative mt-16">
+
+          <!-- Timeline line -->
+          <div
+            class="timeline-line absolute left-[13px] sm:left-1/2 top-0 bottom-0 w-px sm:-translate-x-1/2"
+          ></div>
+
+          <!-- Timeline Item 1 -->
+          <div class="relative grid sm:grid-cols-2 gap-8 sm:gap-16 mb-12 reveal">
+
+            <div class="sm:text-right sm:pr-8">
+              <span class="inline-block text-sm font-semibold text-darkpink">
+                AKT 2026
+              </span>
+            </div>
+
+            <div class="relative pl-10 sm:pl-8">
+              <span
+                class="timeline-dot absolute left-[7px] sm:left-[-9px] top-1 w-3 h-3 rounded-full bg-pink"
+              ></span>
+
+              <div class="timeline-card border border-black/8 rounded-3xl p-6 bg-white">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">
+                  Pendidikan
+                </p>
+
+                <h3 class="font-display text-2xl mt-2">
+                  SMKN 42 Jakarta
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                  Saat ini aku menjalani pendidikan di SMKN 42 Jakarta sebagai
+                  seorang pelajar yang aktif, ambisius, tangguh, dan terus
+                  berusaha mengembangkan kemampuan.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+                  <span class="text-xs px-3 py-1.5 rounded-full bg-cream">Learning</span>
+                  <span class="text-xs px-3 py-1.5 rounded-full bg-softpink/40">Growth</span>
+                  <span class="text-xs px-3 py-1.5 rounded-full bg-cream">Creativity</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="relative grid sm:grid-cols-2 gap-8 sm:gap-16 mb-12 reveal">
+
+            <div class="sm:order-2 sm:pl-8">
+              <span class="inline-block text-sm font-semibold text-darkpink">
+                Personal Development
+              </span>
+            </div>
+
+            <div class="relative sm:order-1 pl-10 sm:pl-0 sm:pr-8 sm:text-right">
+              <span
+                class="timeline-dot absolute left-[7px] sm:right-[-9px] sm:left-auto top-1 w-3 h-3 rounded-full bg-pink"
+              ></span>
+
+              <div class="timeline-card border border-black/8 rounded-3xl p-6 bg-white text-left sm:text-right">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">
+                  Karakter
+                </p>
+
+                <h3 class="font-display text-2xl mt-2">
+                  Aktif & Tangguh
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                  Berusaha aktif dalam berbagai pengalaman, berani mencoba,
+                  belajar dari kesalahan, dan tetap melangkah meskipun
+                  menghadapi tantangan.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="relative grid sm:grid-cols-2 gap-8 sm:gap-16 reveal">
+
+            <div class="sm:text-right sm:pr-8">
+              <span class="inline-block text-sm font-semibold text-darkpink">
+                Next Chapter
+              </span>
+            </div>
+
+            <div class="relative pl-10 sm:pl-8">
+              <span
+                class="timeline-dot absolute left-[7px] sm:left-[-9px] top-1 w-3 h-3 rounded-full bg-pink"
+              ></span>
+
+              <div class="timeline-card border border-black/8 rounded-3xl p-6 bg-white">
+                <p class="text-xs uppercase tracking-[0.18em] text-muted">
+                  Future
+                </p>
+
+                <h3 class="font-display text-2xl mt-2">
+                  Keep Growing
+                </h3>
+
+                <p class="text-muted text-sm leading-7 mt-3">
+                  Terus mengeksplorasi dunia kreativitas, teknologi, desain,
+                  dan berbagai pengalaman baru untuk membangun masa depan yang
+                  lebih baik.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         WORKS
+    ====================================================== -->
+    <section id="karya" class="py-24 sm:py-32 bg-[#FCF9F7]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 reveal">
+
+          <div>
+            <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+              My Work
+            </p>
+
+            <h2 class="font-display text-4xl sm:text-5xl">
+              Hasil Karya
+            </h2>
+
+            <p class="text-muted max-w-xl mt-5 leading-7">
+              Beberapa project dan karya kreatif yang merepresentasikan proses
+              belajar serta eksplorasi ide.
+            </p>
+          </div>
+
+          <!-- Filters -->
+          <div
+            id="projectFilters"
+            class="flex flex-wrap gap-2"
+            role="group"
+            aria-label="Filter hasil karya"
+          >
+            <button class="filter-btn active px-4 py-2 rounded-full border border-black/10 text-sm" data-filter="all">
+              Semua
+            </button>
+
+            <button class="filter-btn px-4 py-2 rounded-full border border-black/10 text-sm bg-white" data-filter="web">
+              Web
+            </button>
+
+            <button class="filter-btn px-4 py-2 rounded-full border border-black/10 text-sm bg-white" data-filter="desain">
+              Desain
+            </button>
+
+            <button class="filter-btn px-4 py-2 rounded-full border border-black/10 text-sm bg-white" data-filter="foto">
+              Foto
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Projects -->
+        <div
+          id="projectGrid"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12"
+        >
+
+          <!-- Project 1 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="web"
+            data-title="Personal Portfolio"
+            data-description="Website portfolio personal dengan konsep soft modern, clean, responsive, dan elegant."
+            data-image="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=85"
+                alt="Project website portfolio personal"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div
+                class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center"
+              >
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Web
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Personal Portfolio
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Eksplorasi desain website portfolio personal.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="desain"
+            data-title="Creative Poster"
+            data-description="Eksplorasi poster dengan komposisi typography, whitespace, dan aksen warna lembut."
+            data-image="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=85"
+                alt="Project desain poster kreatif"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center">
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Desain
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Creative Poster
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Poster dengan visual clean dan modern.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="foto"
+            data-title="Visual Diary"
+            data-description="Kumpulan eksplorasi fotografi yang menangkap momen sederhana dengan sudut pandang personal."
+            data-image="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=85"
+                alt="Project fotografi visual diary"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center">
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Foto
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Visual Diary
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Cerita visual dari momen-momen sederhana.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="web"
+            data-title="Student Landing Page"
+            data-description="Konsep landing page untuk project kreatif pelajar dengan fokus pada UX sederhana."
+            data-image="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=85"
+                alt="Project landing page pelajar"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center">
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Web
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Student Landing Page
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Landing page dengan pendekatan modern dan sederhana.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="desain"
+            data-title="Brand Visual"
+            data-description="Eksplorasi identitas visual dengan kombinasi typography dan elemen minimalis."
+            data-image="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=85"
+                alt="Project brand visual"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center">
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Desain
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Brand Visual
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Eksplorasi identitas visual minimalis.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article
+            class="project-card rounded-3xl overflow-hidden bg-white border border-black/5 cursor-pointer"
+            data-category="foto"
+            data-title="Everyday Moments"
+            data-description="Fotografi everyday life yang mengutamakan natural light dan storytelling."
+            data-image="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1200&q=85"
+          >
+            <div class="relative aspect-[4/3] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85"
+                alt="Fotografi everyday moments"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+
+              <div class="project-overlay absolute inset-0 bg-ink/40 flex items-center justify-center">
+                <span class="px-5 py-2.5 rounded-full bg-white text-sm">
+                  Lihat Detail ↗
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <span class="text-[10px] uppercase tracking-[0.2em] text-darkpink font-semibold">
+                Foto
+              </span>
+
+              <h3 class="font-display text-2xl mt-2">
+                Everyday Moments
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-2">
+                Merekam cerita dari momen sehari-hari.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         PROJECT MODAL
+    ====================================================== -->
+    <div
+      id="projectModal"
+      class="modal fixed inset-0 z-[80] bg-ink/60 backdrop-blur-sm flex items-center justify-center p-5"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div
+        class="relative w-full max-w-4xl bg-white rounded-[28px] overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+      >
+
+        <button
+          id="closeProjectModal"
+          class="absolute z-10 top-4 right-4 w-10 h-10 rounded-full bg-white/90 border border-black/5 flex items-center justify-center text-xl"
+          aria-label="Tutup detail project"
+        >
+          ×
+        </button>
+
+        <div class="grid md:grid-cols-2">
+
+          <div class="aspect-square md:aspect-auto">
+            <img
+              id="modalImage"
+              src=""
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="p-7 sm:p-10 flex flex-col justify-center">
+
+            <p
+              id="modalCategory"
+              class="uppercase tracking-[0.2em] text-xs text-darkpink font-semibold"
+            ></p>
+
+            <h3
+              id="modalTitle"
+              class="font-display text-3xl sm:text-4xl mt-3"
+            ></h3>
+
+            <p
+              id="modalDescription"
+              class="text-muted leading-7 mt-5"
+            ></p>
+
+            <button
+              id="closeProjectModalBottom"
+              class="mt-8 self-start px-5 py-3 rounded-full border border-black/10 text-sm hover:border-pink hover:text-darkpink transition"
+            >
+              Tutup
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         PHOTO GALLERY
+    ====================================================== -->
+    <section id="foto" class="py-24 sm:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+        <div class="text-center reveal">
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+            Photo Diary
+          </p>
+
+          <h2 class="font-display text-4xl sm:text-5xl">
+            Potongan Cerita
+          </h2>
+
+          <p class="text-muted max-w-xl mx-auto mt-5 leading-7">
+            Beberapa momen visual yang bisa menggambarkan perjalanan,
+            kreativitas, dan keseharian.
+          </p>
+        </div>
+
+        <div
+          id="photoGrid"
+          class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mt-12"
+        >
+
+          <!--
+            GANTI FOTO-FOTO DI SECTION INI DENGAN FOTO KAMU SENDIRI.
+            Jangan lupa mengganti alt text.
+          -->
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1GX6YEiRxRsKiweJfSOEBMYzE7WyalbHn/view?usp=drivesdk"
+            data-alt="Momen fotografi 01"
+          >
+            <img
+              src="https://drive.google.com/file/d/1GX6YEiRxRsKiweJfSOEBMYzE7WyalbHn/view?usp=drivesdk"
+              alt="Momen fotografi 01"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+            <span class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition"></span>
+          </button>
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1Dow_OG5NGdfFRboRbTp_T_ESZZZ2ad-7/view?usp=drivesdk"
+            data-alt="Momen fotografi 02"
+          >
+            <img
+              src="https://drive.google.com/file/d/1Dow_OG5NGdfFRboRbTp_T_ESZZZ2ad-7/view?usp=drivesdk"
+              alt="Momen fotografi 02"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </button>
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1bnekN3hPUX3rPJR4gedgObplOzhfrvBK/view?usp=drivesdk"
+            data-alt="Momen fotografi 03"
+          >
+            <img
+              src="https://drive.google.com/file/d/1bnekN3hPUX3rPJR4gedgObplOzhfrvBK/view?usp=drivesdk"
+              alt="Momen fotografi 03"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </button>
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1MLo54bzCfhzqoFMekqSJGe9SZiOfQXuy/view?usp=drivesdk"
+            data-alt="Momen fotografi 04"
+          >
+            <img
+              src="https://drive.google.com/file/d/1MLo54bzCfhzqoFMekqSJGe9SZiOfQXuy/view?usp=drivesdk"
+              alt="Momen fotografi 04"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </button>
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1KFz_VZh91nEDDQeZwhP8XYSu64-TBoDj/view?usp=drivesdk"
+            data-alt="Momen fotografi 05"
+          >
+            <img
+              src="https://drive.google.com/file/d/1KFz_VZh91nEDDQeZwhP8XYSu64-TBoDj/view?usp=drivesdk"
+              alt="Momen fotografi 05"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </button>
+
+          <button
+            class="gallery-item group relative aspect-square overflow-hidden rounded-2xl image-hover"
+            data-image="https://drive.google.com/file/d/1ZIFFV8gei20AOneHWcMDnBFeqFM6OqV-/view?usp=drivesdk"
+            data-alt="Momen fotografi 06"
+          >
+            <img
+              src="https://drive.google.com/file/d/1ZIFFV8gei20AOneHWcMDnBFeqFM6OqV-/view?usp=drivesdk"
+              alt="Momen fotografi 06"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+    <div
+      id="lightbox"
+      class="lightbox fixed inset-0 z-[90] bg-ink/90 backdrop-blur-sm flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Galeri foto"
+    >
+
+      <button
+        id="lightboxClose"
+        class="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 text-white border border-white/20 text-2xl hover:bg-white/20 transition"
+        aria-label="Tutup galeri"
+      >
+        ×
+      </button>
+
+      <button
+        id="lightboxPrev"
+        class="absolute left-3 sm:left-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white border border-white/20 text-xl hover:bg-white/20 transition"
+        aria-label="Foto sebelumnya"
+      >
+        ←
+      </button>
+
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        class="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl"
+      />
+
+      <button
+        id="lightboxNext"
+        class="absolute right-3 sm:right-7 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white border border-white/20 text-xl hover:bg-white/20 transition"
+        aria-label="Foto berikutnya"
+      >
+        →
+      </button>
+
+      <p
+        id="lightboxCounter"
+        class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/70 text-xs tracking-widest"
+      ></p>
+
+    </div>
+
+
+    <!-- =====================================================
+         ARTICLES
+    ====================================================== -->
+    <section id="artikel" class="py-24 sm:py-32 bg-[#FCF9F7]">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 reveal">
+
+          <div>
+            <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+              Journal
+            </p>
+
+            <h2 class="font-display text-4xl sm:text-5xl">
+              Artikel Terbaru
+            </h2>
+          </div>
+
+          <p class="text-muted text-sm max-w-sm leading-6">
+            Catatan kecil tentang proses belajar, kreativitas, teknologi,
+            dan perjalanan menjadi pelajar.
+          </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-12">
+
+          <!-- Article 1 -->
+          <article class="article-card bg-white rounded-3xl overflow-hidden border border-black/5 reveal">
+
+            <div class="aspect-[16/10] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                alt="Laptop dan proses belajar teknologi"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-muted">
+                <span>Technology</span>
+                <span class="w-1 h-1 rounded-full bg-pink"></span>
+                <span>08 Sep 2026</span>
+              </div>
+
+              <h3 class="font-display text-2xl leading-tight mt-4">
+                Belajar Teknologi dari Hal-Hal Kecil
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-3">
+                Bagaimana rasa penasaran dan keberanian mencoba bisa membuka
+                pengalaman baru dalam dunia teknologi.
+              </p>
+
+              <button
+                class="read-more mt-5 text-sm font-semibold text-darkpink hover:translate-x-1 transition-transform"
+                data-title="Belajar Teknologi dari Hal-Hal Kecil"
+                data-content="Belajar teknologi tidak selalu harus dimulai dari sesuatu yang rumit. Kadang, membuat satu halaman website sederhana, mencoba desain baru, atau memahami cara kerja sebuah fitur sudah menjadi langkah yang berarti. Dari proses kecil itulah rasa penasaran tumbuh dan kemampuan berkembang secara perlahan."
+              >
+                Baca Selengkapnya →
+              </button>
+
+            </div>
+          </article>
+
+
+          <!-- Article 2 -->
+          <article class="article-card bg-white rounded-3xl overflow-hidden border border-black/5 reveal delay-100">
+
+            <div class="aspect-[16/10] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+                alt="Alat desain dan kreativitas"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-muted">
+                <span>Creative</span>
+                <span class="w-1 h-1 rounded-full bg-pink"></span>
+                <span>02 Sep 2026</span>
+              </div>
+
+              <h3 class="font-display text-2xl leading-tight mt-4">
+                Ketika Kreativitas Bertemu Pendidikan
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-3">
+                Kreativitas ternyata tidak hanya berguna untuk membuat sesuatu
+                terlihat menarik, tetapi juga membantu menemukan cara belajar.
+              </p>
+
+              <button
+                class="read-more mt-5 text-sm font-semibold text-darkpink hover:translate-x-1 transition-transform"
+                data-title="Ketika Kreativitas Bertemu Pendidikan"
+                data-content="Menurutku, pendidikan dan kreativitas dapat berjalan bersama. Ketika belajar dilakukan dengan cara yang kreatif, materi terasa lebih mudah dipahami dan pengalaman belajar menjadi lebih menyenangkan. Kreativitas juga mengajarkan kita untuk melihat sebuah masalah dari sudut pandang yang berbeda."
+              >
+                Baca Selengkapnya →
+              </button>
+
+            </div>
+          </article>
+
+
+          <!-- Article 3 -->
+          <article class="article-card bg-white rounded-3xl overflow-hidden border border-black/5 reveal delay-200">
+
+            <div class="aspect-[16/10] overflow-hidden image-hover">
+              <img
+                src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=85"
+                alt="Jurnal dan pengembangan diri"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="p-6">
+
+              <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-muted">
+                <span>Growth</span>
+                <span class="w-1 h-1 rounded-full bg-pink"></span>
+                <span>28 Agu 2026</span>
+              </div>
+
+              <h3 class="font-display text-2xl leading-tight mt-4">
+                Tidak Harus Sempurna untuk Memulai
+              </h3>
+
+              <p class="text-sm text-muted leading-6 mt-3">
+                Memulai sesuatu sering kali terasa menakutkan, padahal proses
+                pertama justru menjadi bagian penting dari perjalanan.
+              </p>
+
+              <button
+                class="read-more mt-5 text-sm font-semibold text-darkpink hover:translate-x-1 transition-transform"
+                data-title="Tidak Harus Sempurna untuk Memulai"
+                data-content="Aku belajar bahwa menunggu semuanya sempurna justru bisa membuat kita tidak pernah mulai. Lebih baik mencoba, mengevaluasi, lalu memperbaiki sedikit demi sedikit. Setiap kesalahan dapat menjadi pengalaman yang membantu kita tumbuh."
+              >
+                Baca Selengkapnya →
+              </button>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         ARTICLE MODAL
+    ====================================================== -->
+    <div
+      id="articleModal"
+      class="modal fixed inset-0 z-[85] bg-ink/60 backdrop-blur-sm flex items-center justify-center p-5"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="articleModalTitle"
+    >
+
+      <div class="bg-white w-full max-w-2xl rounded-[28px] p-7 sm:p-10 relative max-h-[85vh] overflow-y-auto">
+
+        <button
+          id="closeArticleModal"
+          class="absolute top-4 right-4 w-10 h-10 rounded-full border border-black/10 text-xl"
+          aria-label="Tutup artikel"
+        >
+          ×
+        </button>
+
+        <p class="uppercase tracking-[0.2em] text-xs text-darkpink font-semibold">
+          Personal Journal
+        </p>
+
+        <h3
+          id="articleModalTitle"
+          class="font-display text-3xl sm:text-4xl mt-3 pr-8"
+        ></h3>
+
+        <p
+          id="articleModalContent"
+          class="text-muted leading-8 mt-6"
+        ></p>
+
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         SOCIAL MEDIA
+    ====================================================== -->
+    <section id="sosial" class="py-24 sm:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <div class="text-center reveal">
+
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+            Let's Connect
+          </p>
+
+          <h2 class="font-display text-4xl sm:text-5xl">
+            Temukan Saya
+          </h2>
+
+          <p class="text-muted mt-5 max-w-lg mx-auto leading-7">
+            Beberapa ruang digital tempat aku berbagi, berekspresi,
+            dan terhubung dengan orang lain.
+          </p>
+
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4 mt-12">
+
+          <!-- Social 1 -->
+          <a
+            href="https://www.instagram.com/__.autumn4?stkn=MWR1ODhrZmZtdndlbg=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card rounded-3xl border border-black/8 p-6 bg-white flex items-center gap-5"
+          >
+            <span class="w-12 h-12 rounded-2xl bg-cream flex items-center justify-center text-xl">
+              ◎
+            </span>
+
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-muted">
+                Instagram
+              </p>
+
+              <p class="font-semibold mt-1">
+                __.autumn4
+              </p>
+            </div>
+
+            <span class="ml-auto text-muted">↗</span>
+          </a>
+
+
+          <!-- Social 2 -->
+          <a
+            href="https://www.tiktok.com/@user10286352918029122006?_r=1&_t=ZS-99aaKSNbZNk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card rounded-3xl border border-black/8 p-6 bg-white flex items-center gap-5"
+          >
+            <span class="w-12 h-12 rounded-2xl bg-softpink/40 flex items-center justify-center text-xl">
+              ◎
+            </span>
+
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-muted">
+                Tiktok
+              </p>
+
+              <p class="font-semibold mt-1">
+                martinedwards
+              </p>
+            </div>
+
+            <span class="ml-auto text-muted">↗</span>
+          </a>
+
+
+          <!-- Social 3 -->
+          <a
+            href="https://youtube.com/@zzzkmmy27?si=Cy7e5G77g_oEueNt"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-card rounded-3xl border border-black/8 p-6 bg-white flex items-center gap-5"
+          >
+            <span class="w-12 h-12 rounded-2xl bg-cream flex items-center justify-center text-xl">
+              ◎
+            </span>
+
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.16em] text-muted">
+                Youtube
+              </p>
+
+              <p class="font-semibold mt-1">
+                zzzkmmy27
+              </p>
+            </div>
+
+            <span class="ml-auto text-muted">↗</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         TESTIMONIAL
+    ====================================================== -->
+    <section id="testimoni" class="py-24 sm:py-32 bg-cream overflow-hidden">
+      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+
+        <div class="text-center reveal">
+
+          <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+            Testimonials
+          </p>
+
+          <h2 class="font-display text-4xl sm:text-5xl">
+            What People Say
+          </h2>
+
+        </div>
+
+        <div class="mt-12 relative">
+
+          <!-- Testimonial 1 -->
+          <article class="testimonial active text-center">
+
+            <!-- Placeholder avatar -->
+            <img
+              src="https://i.pinimg.com/736x/9e/64/bc/9e64bc46babebca7727704b60219a4ef.jpg"
+              alt="Foto testimonial Sarah"
+              loading="lazy"
+              class="w-16 h-16 rounded-full object-cover mx-auto"
+            />
+
+            <div class="mt-6 text-pink text-xl tracking-widest">
+              “
+            </div>
+
+            <p class="font-display text-2xl sm:text-3xl leading-relaxed max-w-3xl mx-auto mt-2">
+              Az Zahra adalah pribadi yang punya semangat belajar tinggi,
+              komunikatif, dan selalu berusaha memberikan yang terbaik.
+            </p>
+
+            <div class="mt-7">
+              <p class="font-semibold">Sarah Amelia</p>
+              <p class="text-xs text-muted mt-1">Creative Partner</p>
+            </div>
+
+          </article>
+
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial text-center">
+
+            <img
+              src="https://i.pinimg.com/736x/78/7d/e9/787de93562f73b2ade7cfc53e6c1dbc5.jpg"
+              alt="Foto testimonial Esham"
+              loading="lazy"
+              class="w-16 h-16 rounded-full object-cover mx-auto"
+            />
+
+            <div class="mt-6 text-pink text-xl tracking-widest">
+              “
+            </div>
+
+            <p class="font-display text-2xl sm:text-3xl leading-relaxed max-w-3xl mx-auto mt-2">
+              Cara Az Zahra menghadapi proses sangat positif. Dia mau belajar,
+              menerima masukan, dan tidak mudah menyerah ketika menemukan
+              tantangan.
+            </p>
+
+            <div class="mt-7">
+              <p class="font-semibold">Esham Abdurrachman</p>
+              <p class="text-xs text-muted mt-1">Project Collaborator</p>
+            </div>
+
+          </article>
+
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial text-center">
+
+            <img
+              src="https://i.pinimg.com/736x/1a/28/3a/1a283a9e7d146cf6a0a6bf2256d04d7c.jpg"
+              alt="Foto testimonial Maya"
+              loading="lazy"
+              class="w-16 h-16 rounded-full object-cover mx-auto"
+            />
+
+            <div class="mt-6 text-pink text-xl tracking-widest">
+              “
+            </div>
+
+            <p class="font-display text-2xl sm:text-3xl leading-relaxed max-w-3xl mx-auto mt-2">
+              Pribadi yang kreatif dan menyenangkan untuk diajak bekerja sama.
+              Punya ide yang menarik dan selalu ingin berkembang.
+            </p>
+
+            <div class="mt-7">
+              <p class="font-semibold">Maya Putri</p>
+              <p class="text-xs text-muted mt-1">Design Collaborator</p>
+            </div>
+
+          </article>
+
+
+          <!-- Slider controls -->
+          <div class="flex items-center justify-center gap-4 mt-10">
+
+            <button
+              id="testimonialPrev"
+              class="w-10 h-10 rounded-full border border-black/10 hover:border-pink hover:text-darkpink transition"
+              aria-label="Testimoni sebelumnya"
+            >
+              ←
+            </button>
+
+            <div id="testimonialDots" class="flex gap-2">
+              <button class="w-2.5 h-2.5 rounded-full bg-pink" aria-label="Testimoni 1"></button>
+              <button class="w-2.5 h-2.5 rounded-full bg-black/15" aria-label="Testimoni 2"></button>
+              <button class="w-2.5 h-2.5 rounded-full bg-black/15" aria-label="Testimoni 3"></button>
+            </div>
+
+            <button
+              id="testimonialNext"
+              class="w-10 h-10 rounded-full border border-black/10 hover:border-pink hover:text-darkpink transition"
+              aria-label="Testimoni berikutnya"
+            >
+              →
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+    <section id="kontak" class="py-24 sm:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+          <!-- Contact Info -->
+          <div class="reveal">
+
+            <p class="uppercase tracking-[0.22em] text-xs font-semibold text-darkpink mb-4">
+              Contact
+            </p>
+
+            <h2 class="font-display text-4xl sm:text-5xl leading-tight">
+              Let's create
+              <span class="italic text-darkpink">something meaningful.</span>
+            </h2>
+
+            <p class="text-muted leading-8 mt-6 max-w-xl">
+              Punya pertanyaan, ingin berkolaborasi, atau sekadar ingin
+              menyapa? Jangan ragu untuk menghubungi saya.
+            </p>
+
+            <div class="space-y-5 mt-9">
+
+              <!-- Email -->
+              <a
+                href="mailto:azahrap656@gmail.com"
+                class="flex items-start gap-4 group"
+              >
+                <span class="w-11 h-11 rounded-2xl bg-cream flex items-center justify-center shrink-0">
+                  @
+                </span>
+
+                <span>
+                  <span class="block text-[10px] uppercase tracking-[0.16em] text-muted">
+                    Email
+                  </span>
+                  <span class="block text-sm font-medium mt-1 group-hover:text-darkpink transition">
+                    azahrap656@gmail.com
+                  </span>
+                </span>
+              </a>
+
+
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/qr/64GFSUZRDJZYL1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-start gap-4 group"
+              >
+                <span class="w-11 h-11 rounded-2xl bg-softpink/40 flex items-center justify-center shrink-0">
+                  WA
+                </span>
+
+                <span>
+                  <span class="block text-[10px] uppercase tracking-[0.16em] text-muted">
+                    WhatsApp
+                  </span>
+                  <span class="block text-sm font-medium mt-1 group-hover:text-darkpink transition">
+                    081297470255
+                  </span>
+                </span>
+              </a>
+
+
+              <!-- Address -->
+              <div class="flex items-start gap-4">
+                <span class="w-11 h-11 rounded-2xl bg-cream flex items-center justify-center shrink-0">
+                  ⌖
+                </span>
+
+                <span>
+                  <span class="block text-[10px] uppercase tracking-[0.16em] text-muted">
+                    Address
+                  </span>
+
+                  <span class="block text-sm font-medium mt-1">
+                    Jl. Jaya Raya 8<br />
+                    RT.007/RW.009
+                  </span>
+                </span>
+              </div>
+
+            </div>
+
+            <!-- WhatsApp CTA -->
+            <a
+              href="https://wa.me/qr/64GFSUZRDJZYL1text=Halo%20Az%20Zahra%2C%20saya%20ingin%20menghubungi%20kamu."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 mt-9 px-6 py-3.5 rounded-full bg-ink text-white text-sm hover:bg-darkpink hover:-translate-y-1 transition-all duration-300"
+            >
+              Chat via WhatsApp
+              <span>↗</span>
+            </a>
+
+          </div>
+
+
+          <!-- Contact Form -->
+          <div class="reveal delay-100">
+
+            <form
+              id="contactForm"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              class="rounded-[30px] bg-[#FCF9F7] border border-black/5 p-6 sm:p-8"
+              novalidate
+            >
+
+              <!-- Netlify hidden fields -->
+              <input type="hidden" name="form-name" value="contact" />
+
+              <p class="hidden">
+                <label>
+                  Jangan isi:
+                  <input name="bot-field" />
+                </label>
+              </p>
+
+              <div class="mb-6">
+                <h3 class="font-display text-2xl">
+                  Send a message
+                </h3>
+
+                <p class="text-sm text-muted mt-2">
+                  Isi form di bawah dan pastikan email kamu aktif.
+                </p>
+              </div>
+
+
+              <!-- Name -->
+              <div class="mb-5">
+
+                <label
+                  for="name"
+                  class="block text-xs uppercase tracking-[0.15em] text-muted mb-2"
+                >
+                  Nama
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Nama kamu"
+                  class="w-full px-4 py-3.5 rounded-2xl bg-white border border-black/10 outline-none focus:border-pink focus:ring-4 focus:ring-pink/10 transition"
+                  required
+                />
+
+                <p id="nameError" class="hidden text-xs text-darkpink mt-2">
+                  Nama wajib diisi.
+                </p>
+
+              </div>
+
+
+              <!-- Email -->
+              <div class="mb-5">
+
+                <label
+                  for="email"
+                  class="block text-xs uppercase tracking-[0.15em] text-muted mb-2"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nama@email.com"
+                  class="w-full px-4 py-3.5 rounded-2xl bg-white border border-black/10 outline-none focus:border-pink focus:ring-4 focus:ring-pink/10 transition"
+                  required
+                />
+
+                <p id="emailError" class="hidden text-xs text-darkpink mt-2">
+                  Masukkan email yang valid.
+                </p>
+
+              </div>
+
+
+              <!-- Message -->
+              <div class="mb-5">
+
+                <label
+                  for="message"
+                  class="block text-xs uppercase tracking-[0.15em] text-muted mb-2"
+                >
+                  Pesan
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tulis pesan kamu..."
+                  class="w-full px-4 py-3.5 rounded-2xl bg-white border border-black/10 outline-none focus:border-pink focus:ring-4 focus:ring-pink/10 transition resize-none"
+                  required
+                ></textarea>
+
+                <p id="messageError" class="hidden text-xs text-darkpink mt-2">
+                  Pesan wajib diisi.
+                </p>
+
+              </div>
+
+
+              <!-- Submit -->
+              <button
+                id="submitButton"
+                type="submit"
+                class="w-full px-6 py-4 rounded-full bg-pink text-white font-semibold text-sm hover:bg-darkpink transition duration-300 flex items-center justify-center gap-3"
+              >
+                <span id="submitText">Kirim Pesan</span>
+                <span id="submitLoader" class="hidden">
+                  Mengirim...
+                </span>
+                <span>↗</span>
+              </button>
+
+              <p
+                id="formStatus"
+                class="hidden text-center text-sm mt-4"
+                role="status"
+              ></p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+
+        <!-- Google Maps -->
+        <div class="mt-16 reveal">
+
+          <div class="flex items-end justify-between gap-5 mb-5">
+            <div>
+              <p class="text-[10px] uppercase tracking-[0.18em] text-muted">
+                Location
+              </p>
+
+              <h3 class="font-display text-2xl mt-1">
+                Find me here
+              </h3>
+            </div>
+          </div>
+
+          <div class="w-full h-[300px] sm:h-[380px] rounded-[28px] overflow-hidden border border-black/5 bg-cream">
+
+            <!--
+              Google Maps embed placeholder.
+              Ganti src iframe dengan embed Google Maps lokasi kamu.
+            -->
+            <iframe
+              title="Google Maps lokasi Az Zahra Putri Labita"
+              src="https://www.google.com/maps/search/?api=1&query=Jalan+Jaya+8+Cengkareng+Barat+Jakarta+Barat+11730"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="bg-cream border-t border-black/5">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12">
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+
+        <div>
+          <a
+            href="#beranda"
+            class="font-display text-2xl"
+          >
+            Az Zahra Putri Labita
+          </a>
+
+          <p class="text-sm text-muted mt-2">
+            Student • Creative • Ambitious
+          </p>
+        </div>
+
+
+        <div class="flex flex-wrap gap-x-5 gap-y-3 text-sm text-muted">
+          <a href="#beranda" class="hover:text-darkpink transition">Beranda</a>
+          <a href="#tentang" class="hover:text-darkpink transition">Tentang</a>
+          <a href="#karya" class="hover:text-darkpink transition">Karya</a>
+          <a href="#artikel" class="hover:text-darkpink transition">Artikel</a>
+          <a href="#kontak" class="hover:text-darkpink transition">Kontak</a>
+        </div>
+
+
+        <div class="flex gap-3">
+
+          <a
+            href="https://instagram.com/__.autumn4"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram Az Zahra"
+            class="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center hover:bg-pink hover:text-white transition"
+          >
+            ◎
+          </a>
+
+          <a
+            href="mailto:azahrap656@gmail.com"
+            aria-label="Email Az Zahra"
+            class="w-10 h-10 rounded-full bg-white border border-black/5 flex items-center justify-center hover:bg-pink hover:text-white transition"
+          >
+            @
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="h-px bg-black/5 my-8"></div>
+
+      <div class="flex flex-col sm:flex-row justify-between gap-3 text-xs text-muted">
+        <p>
+          © 2026 Az Zahra Putri Labita. All rights reserved.
+        </p>
+
+        <p>
+          Made with curiosity & creativity.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =====================================================
+       BACK TO TOP
+  ====================================================== -->
+  <a
+    id="backTop"
+    href="#beranda"
+    class="back-top fixed right-5 bottom-5 z-40 w-12 h-12 rounded-full bg-ink text-white flex items-center justify-center shadow-soft hover:bg-darkpink transition"
+    aria-label="Kembali ke atas"
+  >
+    ↑
+  </a>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+  <script>
+
+    /* =====================================================
+       NAVBAR SCROLL EFFECT
+    ====================================================== */
+
+    const navbar = document.getElementById("navbar");
+    const backTop = document.getElementById("backTop");
+
+    function handleScroll() {
+      if (window.scrollY > 30) {
+        navbar.classList.add("nav-scrolled");
+      } else {
+        navbar.classList.remove("nav-scrolled");
+      }
+
+      if (window.scrollY > 500) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true
+    });
+
+    handleScroll();
+
+
+    /* =====================================================
+       MOBILE NAVIGATION
+    ====================================================== */
+
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    hamburger.addEventListener("click", () => {
+
+      const isOpen = mobileMenu.classList.toggle("open");
+
+      hamburger.classList.toggle("active", isOpen);
+
+      hamburger.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+
+    });
+
+    mobileLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("open");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+
+      });
+
+    });
+
+
+    /* =====================================================
+       SMOOTH SCROLL
+    ====================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function (event) {
+
+        const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        const navbarHeight = navbar.offsetHeight;
+
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight +
+          1;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+
+      });
+
+    });
+
+
+    /* =====================================================
+       ACTIVE NAVIGATION USING INTERSECTION OBSERVER
+    ====================================================== */
+
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            navLinks.forEach(link => {
+              link.classList.remove(
+                "text-darkpink",
+                "font-semibold"
+              );
+            });
+
+            const activeLink = document.querySelector(
+              `.nav-link[href="#${entry.target.id}"]`
+            );
+
+            if (activeLink) {
+              activeLink.classList.add(
+                "text-darkpink",
+                "font-semibold"
+              );
+            }
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "-80px 0px -45% 0px"
+      }
+    );
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+
+    /* =====================================================
+       REVEAL ANIMATION
+    ====================================================== */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            revealObserver.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+
+    /* =====================================================
+       PROJECT FILTER
+    ====================================================== */
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+          btn.classList.add("bg-white");
+        });
+
+        button.classList.add("active");
+        button.classList.remove("bg-white");
+
+        projectCards.forEach(card => {
+
+          const category = card.dataset.category;
+
+          const shouldShow =
+            filter === "all" ||
+            category === filter;
+
+          if (shouldShow) {
+
+            card.style.display = "block";
+
+            requestAnimationFrame(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            });
+
+          } else {
+
+            card.style.opacity = "0";
+            card.style.transform = "translateY(10px)";
+
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 220);
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* =====================================================
+       PROJECT MODAL
+    ====================================================== */
+
+    const projectModal = document.getElementById("projectModal");
+    const closeProjectModal = document.getElementById("closeProjectModal");
+    const closeProjectModalBottom = document.getElementById("closeProjectModalBottom");
+
+    const modalImage = document.getElementById("modalImage");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalCategory = document.getElementById("modalCategory");
+    const modalDescription = document.getElementById("modalDescription");
+
+    function openProjectModal(card) {
+
+      modalImage.src = card.dataset.image;
+      modalImage.alt = card.dataset.title;
+
+      modalTitle.textContent = card.dataset.title;
+      modalCategory.textContent = card.dataset.category;
+      modalDescription.textContent = card.dataset.description;
+
+      projectModal.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+    function closeProject() {
+
+      projectModal.classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+    projectCards.forEach(card => {
+
+      card.addEventListener("click", () => {
+        openProjectModal(card);
+      });
+
+    });
+
+    closeProjectModal.addEventListener("click", closeProject);
+    closeProjectModalBottom.addEventListener("click", closeProject);
+
+    projectModal.addEventListener("click", event => {
+
+      if (event.target === projectModal) {
+        closeProject();
+      }
+
+    });
+
+
+    /* =====================================================
+       PHOTO LIGHTBOX
+    ====================================================== */
+
+    const galleryItems = Array.from(
+      document.querySelectorAll(".gallery-item")
+    );
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    let currentPhotoIndex = 0;
+
+    function showPhoto(index) {
+
+      if (!galleryItems.length) return;
+
+      currentPhotoIndex =
+        (index + galleryItems.length) %
+        galleryItems.length;
+
+      const item = galleryItems[currentPhotoIndex];
+
+      lightboxImage.src = item.dataset.image;
+      lightboxImage.alt = item.dataset.alt;
+
+      lightboxCounter.textContent =
+        `${currentPhotoIndex + 1} / ${galleryItems.length}`;
+
+    }
+
+    function openLightbox(index) {
+
+      showPhoto(index);
+
+      lightbox.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+    galleryItems.forEach((item, index) => {
+
+      item.addEventListener("click", () => {
+        openLightbox(index);
+      });
+
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightboxPrev.addEventListener("click", () => {
+      showPhoto(currentPhotoIndex - 1);
+    });
+
+    lightboxNext.addEventListener("click", () => {
+      showPhoto(currentPhotoIndex + 1);
+    });
+
+    lightbox.addEventListener("click", event => {
+
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+
+    });
+
+
+    /* =====================================================
+       ARTICLE MODAL
+    ====================================================== */
+
+    const articleModal = document.getElementById("articleModal");
+    const articleModalTitle = document.getElementById("articleModalTitle");
+    const articleModalContent = document.getElementById("articleModalContent");
+    const closeArticleModal = document.getElementById("closeArticleModal");
+
+    document.querySelectorAll(".read-more").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        articleModalTitle.textContent =
+          button.dataset.title;
+
+        articleModalContent.textContent =
+          button.dataset.content;
+
+        articleModal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+    function closeArticle() {
+
+      articleModal.classList.remove("show");
+
+      document.body.style.overflow = "";
+
+    }
+
+    closeArticleModal.addEventListener("click", closeArticle);
+
+    articleModal.addEventListener("click", event => {
+
+      if (event.target === articleModal) {
+        closeArticle();
+      }
+
+    });
+
+
+    /* =====================================================
+       TESTIMONIAL SLIDER
+    ====================================================== */
+
+    const testimonials =
+      document.querySelectorAll(".testimonial");
+
+    const testimonialDots =
+      document.querySelectorAll("#testimonialDots button");
+
+    const testimonialPrev =
+      document.getElementById("testimonialPrev");
+
+    const testimonialNext =
+      document.getElementById("testimonialNext");
+
+    let testimonialIndex = 0;
+    let testimonialTimer;
+
+    function showTestimonial(index) {
+
+      testimonialIndex =
+        (index + testimonials.length) %
+        testimonials.length;
+
+      testimonials.forEach((item, i) => {
+        item.classList.toggle(
+          "active",
+          i === testimonialIndex
+        );
+      });
+
+      testimonialDots.forEach((dot, i) => {
+
+        if (i === testimonialIndex) {
+          dot.classList.remove("bg-black/15");
+          dot.classList.add("bg-pink");
+        } else {
+          dot.classList.remove("bg-pink");
+          dot.classList.add("bg-black/15");
+        }
+
+      });
+
+    }
+
+    function nextTestimonial() {
+      showTestimonial(testimonialIndex + 1);
+    }
+
+    function prevTestimonial() {
+      showTestimonial(testimonialIndex - 1);
+    }
+
+    testimonialNext.addEventListener("click", () => {
+
+      nextTestimonial();
+
+      restartTestimonialTimer();
+
+    });
+
+    testimonialPrev.addEventListener("click", () => {
+
+      prevTestimonial();
+
+      restartTestimonialTimer();
+
+    });
+
+    testimonialDots.forEach((dot, index) => {
+
+      dot.addEventListener("click", () => {
+
+        showTestimonial(index);
+
+        restartTestimonialTimer();
+
+      });
+
+    });
+
+    function startTestimonialTimer() {
+
+      testimonialTimer = setInterval(() => {
+        nextTestimonial();
+      }, 6000);
+
+    }
+
+    function restartTestimonialTimer() {
+
+      clearInterval(testimonialTimer);
+
+      startTestimonialTimer();
+
+    }
+
+    startTestimonialTimer();
+
+
+    /* =====================================================
+       CONTACT FORM VALIDATION
+    ====================================================== */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const nameInput =
+      document.getElementById("name");
+
+    const emailInput =
+      document.getElementById("email");
+
+    const messageInput =
+      document.getElementById("message");
+
+    const nameError =
+      document.getElementById("nameError");
+
+    const emailError =
+      document.getElementById("emailError");
+
+    const messageError =
+      document.getElementById("messageError");
+
+    const submitText =
+      document.getElementById("submitText");
+
+    const submitLoader =
+      document.getElementById("submitLoader");
+
+    const formStatus =
+      document.getElementById("formStatus");
+
+    function validateEmail(email) {
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    }
+
+    function clearErrors() {
+
+      [nameInput, emailInput, messageInput].forEach(input => {
+        input.classList.remove("input-error");
+      });
+
+      nameError.classList.add("hidden");
+      emailError.classList.add("hidden");
+      messageError.classList.add("hidden");
+
+    }
+
+    contactForm.addEventListener("submit", async event => {
+
+      event.preventDefault();
+
+      clearErrors();
+
+      let valid = true;
+
+      if (!nameInput.value.trim()) {
+
+        valid = false;
+
+        nameInput.classList.add("input-error");
+        nameError.classList.remove("hidden");
+
+      }
+
+      if (!validateEmail(emailInput.value.trim())) {
+
+        valid = false;
+
+        emailInput.classList.add("input-error");
+        emailError.classList.remove("hidden");
+
+      }
+
+      if (!messageInput.value.trim()) {
+
+        valid = false;
+
+        messageInput.classList.add("input-error");
+        messageError.classList.remove("hidden");
+
+      }
+
+      if (!valid) {
+
+        formStatus.textContent =
+          "Periksa kembali data yang kamu masukkan.";
+
+        formStatus.className =
+          "text-center text-sm mt-4 text-darkpink";
+
+        return;
+
+      }
+
+      /*
+        Jika website sudah di-deploy ke Netlify,
+        form ini dapat menggunakan Netlify Forms.
+
+        Untuk preview lokal, kita tampilkan simulasi
+        loading agar UI tetap berjalan.
+      */
+
+      submitText.classList.add("hidden");
+      submitLoader.classList.remove("hidden");
+
+      const submitButton =
+        document.getElementById("submitButton");
+
+      submitButton.disabled = true;
+      submitButton.classList.add("opacity-70");
+
+      try {
+
+        /*
+          Saat live di Netlify, request berikut
+          akan diproses oleh Netlify Forms.
+        */
+
+        const formData = new FormData(contactForm);
+
+        const encodedData =
+          new URLSearchParams(formData).toString();
+
+        const response = await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type":
+              "application/x-www-form-urlencoded"
+          },
+          body: encodedData
+        });
+
+        if (!response.ok) {
+          throw new Error("Form submission failed");
+        }
+
+        formStatus.textContent =
+          "Pesan berhasil dikirim. Terima kasih sudah menghubungi saya!";
+
+        formStatus.className =
+          "text-center text-sm mt-4 text-darkpink";
+
+        contactForm.reset();
+
+      } catch (error) {
+
+        /*
+          Untuk membuka file langsung secara lokal,
+          Netlify Forms belum aktif.
+        */
+
+        formStatus.textContent =
+          "Form siap digunakan setelah website di-deploy ke Netlify.";
+
+        formStatus.className =
+          "text-center text-sm mt-4 text-muted";
+
+      } finally {
+
+        submitText.classList.remove("hidden");
+        submitLoader.classList.add("hidden");
+
+        submitButton.disabled = false;
+        submitButton.classList.remove("opacity-70");
+
+      }
+
+    });
+
+
+    /* =====================================================
+       KEYBOARD ACCESSIBILITY
+    ====================================================== */
+
+    document.addEventListener("keydown", event => {
+
+      // Escape closes open modals
+      if (event.key === "Escape") {
+
+        closeProject();
+        closeArticle();
+        closeLightbox();
+
+      }
+
+      // Arrow keys for lightbox
+      if (
+        lightbox.classList.contains("show") &&
+        event.key === "ArrowRight"
+      ) {
+        showPhoto(currentPhotoIndex + 1);
+      }
+
+      if (
+        lightbox.classList.contains("show") &&
+        event.key === "ArrowLeft"
+      ) {
+        showPhoto(currentPhotoIndex - 1);
+      }
+
+    });
+
+
+    /* =====================================================
+       PAUSE TESTIMONIAL AUTO-SLIDE ON INTERACTION
+    ====================================================== */
+
+    const testimonialSection =
+      document.getElementById("testimoni");
+
+    testimonialSection.addEventListener("mouseenter", () => {
+      clearInterval(testimonialTimer);
+    });
+
+    testimonialSection.addEventListener("mouseleave", () => {
+      startTestimonialTimer();
+    });
+
+    testimonialSection.addEventListener("touchstart", () => {
+      clearInterval(testimonialTimer);
+    }, {
+      passive: true
+    });
+
+  </script>
+
+</body>
+</html>
